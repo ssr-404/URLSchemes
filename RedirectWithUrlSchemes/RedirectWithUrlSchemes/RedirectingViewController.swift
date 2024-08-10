@@ -75,12 +75,13 @@ class RedirectingViewController: UIViewController {
     guard let url = URL(string: "shortcuts://") else {
       return //be safe
     }
-
+    
     if #available(iOS 10.0, *) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
     } else {
-        UIApplication.shared.openURL(url)
-    }  }
+      UIApplication.shared.openURL(url)
+    }
+  }
   
   private func redirectToUrl() {
     let url = URL(string: "urlschemesexample://")
